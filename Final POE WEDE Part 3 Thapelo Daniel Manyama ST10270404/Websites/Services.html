@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | Mokopane Bakery</title>
+    <link rel="stylesheet" href="../CSS/Styles.css">
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fcf8f0;
+            color: #3e2c1b;
+            line-height: 1.6;
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* ===== BACKGROUND IMAGE OVERLAY ===== */
+        .bg-layer {
+            position: fixed;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.18;
+            z-index: 0;
+            filter: blur(1px) saturate(1.1);
+            pointer-events: none;
+        }
+
+        /* ===== WELCOME ANIMATION ===== */
+        .welcome-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(77, 52, 33, 0.92) 0%, rgba(166, 124, 82, 0.88) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: welcomeFadeOut 1s ease 3.2s forwards;
+            pointer-events: none;
+        }
+
+        .welcome-content {
+            text-align: center;
+            color: #fffdf9;
+            animation: welcomePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+        }
+
+        .welcome-content .welcome-icon {
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 1rem;
+            animation: welcomeBounce 1.2s ease 1s infinite;
+        }
+
+        .welcome-content h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-content h1 span {
+            font-weight: 700;
+            color: #fcefc7;
+        }
+
+        .welcome-content p {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            color: #f0e4d5;
+            font-style: italic;
+        }
+
+        .welcome-progress {
+            width: 220px;
+            height: 4px;
+            background: rgba(255, 253, 249, 0.25);
+            border-radius: 4px;
+            margin: 1.5rem auto 0;
+            overflow: hidden;
+        }
+
+        .welcome-progress::after {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: #fcefc7;
+            border-radius: 4px;
+            animation: progressGrow 3s linear forwards;
+        }
+
+        @keyframes welcomeFadeOut {
+            from { opacity: 1; visibility: visible; }
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        @keyframes welcomePop {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes welcomeBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes progressGrow {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        /* ===== NAVIGATION BAR ===== */
+        .top-nav {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 253, 249, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 2px solid #efe4d6;
+            padding: 0.7rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(62, 44, 27, 0.06);
+            position: sticky;
+            top: 0;
+        }
+
+        .top-nav .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .top-nav .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+        }
+
+        .top-nav .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a67c52 0%, #d4b48c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #fffdf9;
+            box-shadow: 0 4px 14px rgba(166, 124, 82, 0.35);
+            flex-shrink: 0;
+            border: 2px solid #fffdf9;
+        }
+
+        .top-nav .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .top-nav .logo-text .logo-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #4d3421;
+            text-transform: uppercase;
+        }
+
+        .top-nav .logo-text .logo-name span {
+            color: #a67c52;
+            font-weight: 300;
+        }
+
+        .top-nav .logo-text .logo-tag {
+            font-size: 0.62rem;
+            letter-spacing: 2.2px;
+            color: #a67c52;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .top-nav .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.15rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .top-nav .nav-links li {
+            display: inline-block;
+        }
+
+        .top-nav .nav-links a {
+            display: inline-block;
+            padding: 0.45rem 0.95rem;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: #5c4430;
+            text-decoration: none;
+            border-radius: 30px;
+            letter-spacing: 0.4px;
+            transition: background 0.25s, color 0.25s;
+            white-space: nowrap;
+        }
+
+        .top-nav .nav-links a:hover {
+            background: #f0e4d5;
+            color: #4d3421;
+        }
+
+        .top-nav .nav-links a.active {
+            background: #a67c52;
+            color: #fffdf9;
+            font-weight: 600;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .hero-banner {
+            position: relative;
+            z-index: 5;
+            max-width: 1100px;
+            margin: 1.5rem auto 0;
+            border-radius: 24px;
+            overflow: hidden;
+            height: 240px;
+            box-shadow: 0 16px 44px rgba(62, 44, 27, 0.18);
+            border: 3px solid rgba(255, 253, 249, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            display: block;
+            transition: transform 6s ease;
+        }
+
+        .hero-banner:hover img {
+            transform: scale(1.06);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(62, 44, 27, 0.15) 0%, rgba(62, 44, 27, 0.55) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .hero-overlay h2 {
+            color: #fffdf9;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+            margin-bottom: 0.2rem;
+        }
+
+        .hero-overlay p {
+            color: #f0e4d5;
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            font-style: italic;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===== PAGE WRAPPER ===== */
+        .page-wrapper {
+            position: relative;
+            z-index: 5;
+            padding: 1.5rem 1.5rem 3rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 253, 249, 0.96);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 2.5rem 2.5rem 2rem;
+            box-shadow: 0 24px 70px rgba(62, 44, 27, 0.14);
+            border: 1px solid rgba(240, 228, 213, 0.8);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            text-align: center;
+            padding-bottom: 1.2rem;
+            border-bottom: 2px solid #efe4d6;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 3.4rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+            color: #4d3421;
+            text-transform: uppercase;
+            margin-bottom: 0.1rem;
+            text-shadow: 0 2px 12px rgba(166, 124, 82, 0.10);
+        }
+
+        header h1 span {
+            font-weight: 600;
+            color: #a67c52;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #7a5d3e;
+            letter-spacing: 2px;
+        }
+
+        header p strong {
+            font-weight: 600;
+            color: #4d3421;
+        }
+
+        /* ===== TAB SYSTEM ===== */
+        .tab-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            padding: 0.4rem;
+            background: #f7f0e7;
+            border-radius: 40px;
+            border: 1px solid #ede3d6;
+        }
+
+        .tab-btn {
+            flex: 1 1 auto;
+            padding: 0.75rem 1.4rem;
+            border: none;
+            background: transparent;
+            border-radius: 36px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #5c4430;
+            cursor: pointer;
+            transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+            font-family: inherit;
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            background: #efe4d6;
+            color: #4d3421;
+        }
+
+        .tab-btn.active {
+            background: #a67c52;
+            color: #fffdf9;
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(166, 124, 82, 0.35);
+        }
+
+        .tab-btn .tab-icon {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .tab-panel {
+            display: none;
+            animation: tabFadeIn 0.4s ease;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SERVICE CARDS ===== */
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(253, 250, 246, 0.92);
+            border-radius: 20px;
+            padding: 1.8rem 2rem 2rem;
+            border: 1px solid #ede3d6;
+            transition: box-shadow 0.3s, transform 0.2s, background 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 16px 40px rgba(62, 44, 27, 0.12);
+            transform: translateY(-4px);
+            background: rgba(255, 253, 249, 0.98);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #4d3421;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .service-card h3 .service-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 4px rgba(166, 124, 82, 0.2));
+        }
+
+        .service-card .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card .image-row img {
+            height: 200px;
+            width: auto;
+            max-width: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+            border: 1px solid #efe4d6;
+            transition: transform 0.3s, box-shadow 0.3s;
+            flex: 1 1 160px;
+        }
+
+        .service-card .image-row img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 28px rgba(62, 44, 27, 0.16);
+        }
+
+        .service-card p {
+            font-size: 1.05rem;
+            color: #4d3a2b;
+            max-width: 700px;
+            margin-top: 0.2rem;
+        }
+
+        .service-card.special p {
+            background: #f7f0e7;
+            padding: 1.2rem 1.8rem;
+            border-radius: 14px;
+            border-left: 5px solid #a67c52;
+            font-style: italic;
+            color: #3e2c1b;
+            max-width: 100%;
+        }
+
+        .service-card.highlight {
+            border-color: #a67c52;
+            box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.2), 0 12px 32px rgba(62, 44, 27, 0.10);
+        }
+
+        /* ===== PRICE TABLE ===== */
+        .price-table-wrapper {
+            overflow-x: auto;
+            border-radius: 18px;
+            border: 1px solid #e5d5c4;
+            background: #fffdf9;
+        }
+
+        table.price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.98rem;
+            min-width: 500px;
+        }
+
+        table.price-table thead {
+            background: #a67c52;
+            color: #fffdf9;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        table.price-table th,
+        table.price-table td {
+            padding: 0.85rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #efe4d6;
+        }
+
+        table.price-table tbody tr:nth-child(even) {
+            background: #fdf8f2;
+        }
+
+        table.price-table tbody tr:hover {
+            background: #f7f0e7;
+        }
+
+        table.price-table td:last-child {
+            font-weight: 600;
+            color: #7a5d3e;
+        }
+
+        /* ===== ORDER PANELS ===== */
+        .order-panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .panel {
+            background: #fdfaf6;
+            border-radius: 18px;
+            padding: 1.6rem 1.4rem 1.4rem;
+            border: 1px solid #ede3d6;
+            box-shadow: 0 6px 20px rgba(62, 44, 27, 0.06);
+            transition: box-shadow 0.3s;
+        }
+
+        .panel:hover {
+            box-shadow: 0 12px 32px rgba(62, 44, 27, 0.10);
+        }
+
+        .panel h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #4d3421;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid #efe4d6;
+            padding-bottom: 0.6rem;
+        }
+
+        .panel h3 .panel-icon {
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 0.9rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #5c4430;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.65rem 0.9rem;
+            border-radius: 12px;
+            border: 1.5px solid #e5d5c4;
+            background: #fffdf9;
+            font-size: 0.92rem;
+            color: #3e2c1b;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #a67c52;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: #a67c52;
+            color: #fffdf9;
+            border: none;
+            border-radius: 40px;
+            padding: 0.7rem 1.2rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
+            font-family: inherit;
+            width: 100%;
+            box-shadow: 0 4px 14px rgba(166, 124, 82, 0.3);
+        }
+
+        .btn:hover {
+            background: #7a5d3e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(122, 93, 62, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: #d4b48c;
+            box-shadow: 0 4px 14px rgba(212, 180, 140, 0.3);
+            color: #3e2c1b;
+        }
+
+        .btn-secondary:hover {
+            background: #c0a078;
+            box-shadow: 0 8px 24px rgba(192, 160, 120, 0.4);
+        }
+
+        .track-result {
+            margin-top: 0.8rem;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            background: #f7f0e7;
+            border-left: 4px solid #a67c52;
+            font-size: 0.88rem;
+            color: #3e2c1b;
+            display: none;
+            word-break: break-word;
+        }
+
+        .track-result.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .track-result strong {
+            color: #4d3421;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-left: 0.3rem;
+        }
+
+        .status-badge.preparing {
+            background: #fcefc7;
+            color: #8a6d1f;
+        }
+
+        .status-badge.ready {
+            background: #d4edda;
+            color: #2e6b3a;
+        }
+
+        .status-badge.out-for-delivery {
+            background: #cce5ff;
+            color: #1a4a7a;
+        }
+
+        /* Transaction history */
+        .transaction-history {
+            margin-top: 0.4rem;
+            max-height: 190px;
+            overflow-y: auto;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            background: #fffdf9;
+            border: 1px solid #efe4d6;
+            padding: 0.2rem 0.6rem;
+        }
+
+        .transaction-history .tx-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.45rem 0.2rem;
+            border-bottom: 1px solid #f0e4d5;
+        }
+
+        .transaction-history .tx-row:last-child {
+            border-bottom: none;
+        }
+
+        .tx-id {
+            font-weight: 600;
+            color: #7a5d3e;
+        }
+
+        .tx-amount {
+            color: #a67c52;
+            font-weight: 600;
+        }
+
+        .empty-tx {
+            color: #b9a89a;
+            font-style: italic;
+            padding: 0.6rem 0;
+            text-align: center;
+        }
+
+        /* ===== GALLERY STRIP ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-grid .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(62, 44, 27, 0.10);
+            border: 2px solid #fffdf9;
+            aspect-ratio: 1 / 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-grid .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-grid .gallery-item:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 14px 36px rgba(62, 44, 27, 0.18);
+        }
+
+        .gallery-grid .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e5d5c4, transparent);
+            margin: 1.5rem 0;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 2px solid #efe4d6;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            color: #7a5d3e;
+            letter-spacing: 0.5px;
+        }
+
+        footer p em {
+            font-style: italic;
+            font-weight: 400;
+            color: #4d3421;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1000px) {
+            .order-panels {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .order-panels {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .top-nav .nav-inner {
+                justify-content: center;
+                text-align: center;
+            }
+            .top-nav .nav-links {
+                justify-content: center;
+            }
+            .hero-banner {
+                height: 180px;
+                margin: 1rem auto 0;
+                border-radius: 18px;
+            }
+            .hero-overlay h2 {
+                font-size: 1.3rem;
+                letter-spacing: 2px;
+            }
+            .hero-overlay p {
+                font-size: 0.82rem;
+            }
+            .welcome-content h1 {
+                font-size: 2rem;
+            }
+            .welcome-content .welcome-icon {
+                font-size: 3.5rem;
+            }
+            .welcome-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .page-wrapper {
+                padding: 1.2rem 0.8rem 2rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 18px;
+            }
+            header h1 {
+                font-size: 2.4rem;
+                letter-spacing: 2px;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .service-card {
+                padding: 1.2rem 1.2rem 1.5rem;
+            }
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+            .service-card .image-row img {
+                height: 160px;
+                flex: 1 1 120px;
+            }
+            .service-card p {
+                font-size: 0.98rem;
+            }
+            .service-card.special p {
+                padding: 1rem 1.2rem;
+                font-size: 0.98rem;
+            }
+            footer p {
+                font-size: 0.98rem;
+            }
+            .top-nav .nav-links a {
+                font-size: 0.82rem;
+                padding: 0.35rem 0.7rem;
+            }
+            .top-nav .logo-text .logo-name {
+                font-size: 0.95rem;
+            }
+            .top-nav .logo-text .logo-tag {
+                font-size: 0.55rem;
+            }
+            .top-nav .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 0.7rem;
+            }
+            .panel {
+                padding: 1.2rem 1rem;
+            }
+            .tab-btn {
+                padding: 0.6rem 0.9rem;
+                font-size: 0.85rem;
+            }
+            .tab-btn .tab-icon {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .service-card .image-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service-card .image-row img {
+                width: 100%;
+                height: auto;
+                max-height: 220px;
+                flex: 0 1 auto;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .top-nav .logo-text .logo-name {
+                font-size: 0.85rem;
+            }
+            .top-nav .nav-links a {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.55rem;
+            }
+            .hero-banner {
+                height: 150px;
+            }
+            .hero-overlay h2 {
+                font-size: 1.05rem;
+            }
+            .welcome-content h1 {
+                font-size: 1.6rem;
+                letter-spacing: 2px;
+            }
+            .welcome-content .welcome-icon {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* ===== CHATBOT STYLES ===== */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #a67c52;
+            color: #fffdf9;
+            border: none;
+            border-radius: 60px;
+            padding: 14px 22px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            box-shadow: 0 8px 28px rgba(166, 124, 82, 0.4);
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: inherit;
+        }
+
+        .chatbot-toggle:hover {
+            background: #7a5d3e;
+            transform: scale(1.03);
+            box-shadow: 0 12px 36px rgba(122, 93, 62, 0.5);
+        }
+
+        .chatbot-toggle .icon {
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            width: 360px;
+            max-width: calc(100vw - 40px);
+            background: #fffdf9;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(62, 44, 27, 0.25);
+            border: 1px solid #ede3d6;
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            z-index: 1001;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fadeSlideUp 0.25s ease-out;
+        }
+
+        .chatbot-container.open {
+            display: flex;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chatbot-header {
+            background: #4d3421;
+            color: #fffdf9;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #a67c52;
+        }
+
+        .chatbot-header h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chatbot-header h4 .icon {
+            font-size: 1.2rem;
+        }
+
+        .chatbot-close {
+            background: transparent;
+            border: none;
+            color: #e5d5c4;
+            font-size: 1.6rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0 4px;
+            transition: color 0.2s;
+        }
+
+        .chatbot-close:hover {
+            color: #ffffff;
+        }
+
+        .chatbot-messages {
+            padding: 18px 18px 12px;
+            max-height: 280px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #fdfaf6;
+        }
+
+        .chatbot-messages .msg {
+            max-width: 85%;
+            padding: 10px 16px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .chatbot-messages .msg.bot {
+            align-self: flex-start;
+            background: #efe4d6;
+            color: #3e2c1b;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chatbot-messages .msg.user {
+            align-self: flex-end;
+            background: #a67c52;
+            color: #fffdf9;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chatbot-options {
+            padding: 6px 14px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: #fdfaf6;
+            border-top: 1px solid #f0e4d5;
+        }
+
+        .chatbot-options button {
+            background: #fffdf9;
+            border: 1.5px solid #d4b48c;
+            border-radius: 40px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #4d3421;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            font-family: inherit;
+            flex: 1 1 auto;
+            min-width: 100px;
+        }
+
+        .chatbot-options button:hover {
+            background: #a67c52;
+            border-color: #a67c52;
+            color: #fffdf9;
+        }
+
+        .chatbot-input-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px 16px;
+            gap: 10px;
+            background: #fffdf9;
+            border-top: 1px solid #f0e4d5;
+        }
+
+        .chatbot-input-row input {
+            flex: 1;
+            padding: 10px 16px;
+            border-radius: 40px;
+            border: 1.5px solid #e5d5c4;
+            background: #fdfaf6;
+            font-size: 0.95rem;
+            color: #3e2c1b;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .chatbot-input-row input:focus {
+            border-color: #a67c52;
+        }
+
+        .chatbot-input-row button {
+            background: #a67c52;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fffdf9;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .chatbot-input-row button:hover {
+            background: #7a5d3e;
+            transform: scale(1.05);
+        }
+
+        .chatbot-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chatbot-messages::-webkit-scrollbar-track {
+            background: #f0e4d5;
+            border-radius: 10px;
+        }
+        .chatbot-messages::-webkit-scrollbar-thumb {
+            background: #d4b48c;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 440px) {
+            .chatbot-container {
+                width: calc(100vw - 32px);
+                right: 16px;
+                bottom: 90px;
+            }
+            .chatbot-toggle {
+                bottom: 18px;
+                right: 18px;
+                padding: 12px 18px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .toast-message {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #4d3421;
+            color: #fffdf9;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            z-index: 2000;
+            letter-spacing: 0.3px;
+        }
+
+        .toast-message.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== WELCOME ANIMATION OVERLAY ===== -->
+    <div class="welcome-overlay" aria-hidden="true">
+        <div class="welcome-content">
+            <span class="welcome-icon">🥐</span>
+            <h1>Hi, <span>Welcome</span></h1>
+            <p>to the Mokopane Bakery Services Page</p>
+            <div class="welcome-progress"></div>
+        </div>
+    </div>
+
+    <!-- ===== BACKGROUND IMAGE LAYER ===== -->
+    <div class="bg-layer" aria-hidden="true"></div>
+
+    <!-- ===== TOP NAVIGATION BAR ===== -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <a href="#" class="logo-wrap">
+                <div class="logo-icon" aria-hidden="true"></div>
+                <div class="logo-text">
+                    <span class="logo-name">Mokopane <span>Bakery</span></span>
+                    <span class="logo-tag">Artisan &amp; Deli</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\index.html">Home</a></li>
+                <li><a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\About Us.html">About Us</a></li>
+                <li><a href="#" class="active">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\Contact Us.html">Contact</a></li>
+                <li><a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\Enquiry.html">Enquiry</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO BANNER ===== -->
+    <div class="hero-banner">
+        <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Platter.webp" alt="Mokopane Bakery fresh breakfast platter" />
+        <div class="hero-overlay">
+            <h2>Baked Fresh, Served With Care</h2>
+            <p>Artisan goodness in every bite</p>
+        </div>
+    </div>
+
+    <!-- ===== PAGE CONTENT WRAPPER ===== -->
+    <div class="page-wrapper">
+
+        <div class="container">
+            <!-- ===== HEADER ===== -->
+            <header>
+                <h1>Mokopane</h1>
+                <p><strong>Artisan Bakery &amp; Deli</strong></p>
+            </header>
+
+            <main>
+                <!-- ===== TAB NAVIGATION ===== -->
+                <div class="tab-nav" role="tablist" aria-label="Services page sections">
+                    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-services" id="tab-btn-services" data-tab="services">
+                        <span class="tab-icon"></span> Our Services
+                    </button>
+                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-prices" id="tab-btn-prices" data-tab="prices">
+                        <span class="tab-icon"></span> Price List
+                    </button>
+                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-order" id="tab-btn-order" data-tab="order">
+                        <span class="tab-icon"></span> Order &amp; Track
+                    </button>
+                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-gallery" id="tab-btn-gallery" data-tab="gallery">
+                        <span class="tab-icon"></span> Gallery
+                    </button>
+                </div>
+
+                <!-- ===== TAB 1: SERVICES OVERVIEW ===== -->
+                <div class="tab-panel active" id="tab-services" role="tabpanel" aria-labelledby="tab-btn-services">
+                    <div class="service-grid" id="serviceGrid">
+
+                        <!-- 1. Fresh Artisan Bakery -->
+                        <section class="service-card" data-service="bakery" id="card-bakery">
+                            <h3><span class="service-icon"></span> Fresh Artisan Bakery</h3>
+                            <div class="image-row">
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Baked Rolls.png" alt="Baked Rolls" />
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Muffin2.0.webp" alt="Muffins" />
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Fresh Bread.jpg" alt="Fresh Bread" />
+                            </div>
+                            <p>
+                                Enjoy freshly baked bread, rolls, croissants, muffins, and pastries,
+                                prepared daily using quality ingredients and traditional baking techniques.
+                            </p>
+                        </section>
+
+                        <hr class="divider" />
+
+                        <!-- 2. Coffee & Beverages -->
+                        <section class="service-card" data-service="coffee" id="card-coffee">
+                            <h3><span class="service-icon"></span> Coffee &amp; Beverages</h3>
+                            <div class="image-row">
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Branded Coffee.jpg" alt="Branded coffee" />
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Capacino Cup.jpg" alt="Cappuccino" />
+                            </div>
+                            <p>
+                                From expertly brewed coffee to refreshing beverages, we offer the
+                                perfect accompaniment to your favourite pastry or a relaxing moment
+                                in our café.
+                            </p>
+                        </section>
+
+                        <hr class="divider" />
+
+                        <!-- 3. Deli & Fresh Meals -->
+                        <section class="service-card" data-service="deli" id="card-deli">
+                            <h3><span class="service-icon"></span> Deli &amp; Fresh Meals</h3>
+                            <div class="image-row">
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Take away sandwiches.jpg" alt="Sandwiches" />
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Salads.png" alt="Salads" />
+                            </div>
+                            <p>
+                                Discover a delicious selection of freshly prepared sandwiches, salads,
+                                savoury dishes, and deli favourites, crafted for flavour, freshness,
+                                and convenience.
+                            </p>
+                        </section>
+
+                        <hr class="divider" />
+
+                        <!-- 4. Cakes & Special Orders -->
+                        <section class="service-card special" data-service="cakes" id="card-cakes">
+                            <h3><span class="service-icon"></span> Cakes &amp; Special Orders</h3>
+                            <p>
+                                Celebrate life's special moments with beautifully crafted cakes,
+                                pastries, and customised baked goods prepared to suit your occasion.
+                            </p>
+                        </section>
+
+                        <hr class="divider" />
+
+                        <!-- 5. Breakfast & Light Bites -->
+                        <section class="service-card" data-service="breakfast" id="card-breakfast">
+                            <h3><span class="service-icon"></span> Breakfast &amp; Light Bites</h3>
+                            <div class="image-row">
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Breakfast Lights 1.jpg" alt="Breakfast Platter" />
+                                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Cookies.webp" alt="Muffins" />
+                            </div>
+                            <p>
+                                Start your morning with freshly baked goods, hearty breakfast options,
+                                and satisfying light meals made with care.
+                            </p>
+                        </section>
+
+                    </div>
+                </div>
+
+                <!-- =====  This section in include PRICE LIST ===== -->
+                <div class="tab-panel" id="tab-prices" role="tabpanel" aria-labelledby="tab-btn-prices">
+                    <div class="price-table-wrapper">
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Category</th>
+                                    <th>Price (ZAR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Sourdough Loaf</td><td>Bakery</td><td>R 45.00</td></tr>
+                                <tr><td>Croissant (single)</td><td>Bakery</td><td>R 18.00</td></tr>
+                                <tr><td>Muffin (single)</td><td>Bakery</td><td>R 13.00</td></tr>
+                                <tr><td>Baked Rolls (6 pack)</td><td>Bakery</td><td>R 30.00</td></tr>
+                                <tr><td>Brioche Loaf</td><td>Bakery</td><td>R 55.00</td></tr>
+                                <tr><td>Almond Croissant</td><td>Bakery</td><td>R 24.00</td></tr>
+                                <tr><td>Cappuccino</td><td>Coffee</td><td>R 28.00</td></tr>
+                                <tr><td>Latte</td><td>Coffee</td><td>R 30.00</td></tr>
+                                <tr><td>Espresso</td><td>Coffee</td><td>R 22.00</td></tr>
+                                <tr><td>Fresh Juice (300ml)</td><td>Beverages</td><td>R 25.00</td></tr>
+                                <tr><td>Garden Salad</td><td>Deli</td><td>R 65.00</td></tr>
+                                <tr><td>Chicken Mayo Sandwich</td><td>Deli</td><td>R 48.00</td></tr>
+                                <tr><td>Breakfast Platter</td><td>Breakfast</td><td>R 85.00</td></tr>
+                                <tr><td>Oats &amp; Granola Bowl</td><td>Breakfast</td><td>R 42.00</td></tr>
+                                <tr><td>Custom Cake (from)</td><td>Cakes</td><td>R 250.00</td></tr>
+                                <tr><td>Party Pastry Platter (12)</td><td>Cakes</td><td>R 180.00</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ===== TAB 3: ORDER & TRACK ===== -->
+                <div class="tab-panel" id="tab-order" role="tabpanel" aria-labelledby="tab-btn-order">
+                    <div class="order-panels">
+                        <!-- Left panel: Place Order -->
+                        <div class="panel">
+                            <h3><span class="panel-icon"></span> Place an Order</h3>
+                            <div class="form-group">
+                                <label for="orderName">Your Name</label>
+                                <input type="text" id="orderName" placeholder="e.g. Thapelo M." />
+                            </div>
+                            <div class="form-group">
+                                <label for="orderItem">Select Item</label>
+                                <select id="orderItem">
+                                    <option value="Sourdough Loaf">Sourdough Loaf – R45</option>
+                                    <option value="Croissant (2)">Croissant (2) – R35</option>
+                                    <option value="Muffin (4)">Muffin (4) – R50</option>
+                                    <option value="Cappuccino">Cappuccino – R28</option>
+                                    <option value="Breakfast Platter">Breakfast Platter – R85</option>
+                                    <option value="Custom Cake">Custom Cake – from R250</option>
+                                    <option value="Brioche Loaf">Brioche Loaf – R55</option>
+                                    <option value="Almond Croissant">Almond Croissant – R24</option>
+                                    <option value="Garden Salad">Garden Salad – R65</option>
+                                    <option value="Chicken Mayo Sandwich">Chicken Mayo Sandwich – R48</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderQty">Quantity</label>
+                                <input type="number" id="orderQty" min="1" max="20" value="1" />
+                            </div>
+                            <button class="btn" id="placeOrderBtn">
+                                <span>🛒</span> Place Order
+                            </button>
+                        </div>
+
+                        <!-- Middle panel: Transaction History -->
+                        <div class="panel">
+                            <h3><span class="panel-icon"></span> Transaction History</h3>
+                            <div class="transaction-history" id="transactionHistory">
+                                <div class="empty-tx">No transactions yet.</div>
+                            </div>
+                        </div>
+
+                        <!-- Right panel: Track Order -->
+                        <div class="panel">
+                            <h3><span class="panel-icon"></span> Track Your Order</h3>
+                            <div class="form-group">
+                                <label for="trackOrderId">Order ID</label>
+                                <input type="text" id="trackOrderId" placeholder="e.g. MKP-4821" />
+                            </div>
+                            <button class="btn btn-secondary" id="trackOrderBtn">
+                                <span></span> Track Order
+                            </button>
+                            <div class="track-result" id="trackResult"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== TAB 4: GALLERY ===== -->
+                <div class="tab-panel" id="tab-gallery" role="tabpanel" aria-labelledby="tab-btn-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Levitation Croissant.jpg" alt="Freshly baked rolls" />
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Golden Muffin.jpg" alt="Golden muffins" />
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Capacino Cup (2).jpg" alt="Cappuccino" />
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Custom Cake.jpg" alt="Custom cake" />
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Garden Salad.jpg" alt="Garden salads" />
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Branded Coffee (2).jpg" alt="Branded coffee" />
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=2070&auto=format&fit=crop" alt="Breakfast platter" />
+                        </div>
+                        <div class="gallery-item">
+                            <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Artisan Oats & Granola.jpg" alt="Artisan bread" />
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <footer>
+                <p><em>Mokopane Artisan Bakery &amp; Deli – baked fresh, served with care.</em></p>
+            </footer>
+
+        </div><!-- /.container -->
+
+    </div><!-- /.page-wrapper -->
+
+    <!-- ===== CHATBOT TOGGLE BUTTON ===== -->
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chat assistant">
+        <span class="icon">💬</span> Chat with us
+    </button>
+
+    <!-- ===== CHATBOT CONTAINER ===== -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h4><span class="icon">🥐</span> Mokopane Assistant</h4>
+            <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages"></div>
+        <div class="chatbot-options" id="chatbotOptions"></div>
+        <div class="chatbot-input-row">
+            <input type="text" id="chatbotInput" placeholder="Type a message..." aria-label="Type your message" />
+            <button id="chatbotSend" aria-label="Send message">&#10148;</button>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast-message" id="toastMessage"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        (function() {
+            "use strict";
+
+            // ============================================================
+            // 1. DATA & STATE
+            // ============================================================
+            const services = {
+                bakery: {
+                    name: "Fresh Artisan Bakery",
+                    description: "Freshly baked bread, rolls, croissants, muffins, and pastries daily.",
+                    cardId: "card-bakery"
+                },
+                coffee: {
+                    name: "Coffee & Beverages",
+                    description: "Expertly brewed coffee and refreshing beverages to pair with your pastry.",
+                    cardId: "card-coffee"
+                },
+                deli: {
+                    name: "Deli & Fresh Meals",
+                    description: "Fresh sandwiches, salads, savoury dishes, and deli favourites.",
+                    cardId: "card-deli"
+                },
+                cakes: {
+                    name: "Cakes & Special Orders",
+                    description: "Custom cakes, pastries, and baked goods for any occasion.",
+                    cardId: "card-cakes"
+                },
+                breakfast: {
+                    name: "Breakfast & Light Bites",
+                    description: "Hearty breakfast options and light meals made with care.",
+                    cardId: "card-breakfast"
+                }
+            };
+
+            const botReplies = {
+                greeting: "Hello! 👋 Welcome to Mokopane Artisan Bakery & Deli. How can I help you today?",
+                hours: "We're open Monday to Saturday from 7:00 AM to 6:00 PM, and Sunday from 8:00 AM to 2:00 PM. 🕖",
+                location: "We're located at 12 Main Road, Mokopane. Pop in for a visit! 📍",
+                order: "You can place orders by calling us at (015) 123-4567 or by visiting our store. For custom cakes, please give us 48 hours notice. 📞 You can also use the order form on this page!",
+                track: "To track your order, enter your order ID in the 'Track Your Order' section. You'll receive an ID after placing an order. 📦",
+                thanks: "You're very welcome! Is there anything else I can help you with? 😊",
+                fallback: "I'm not sure I understand. You can ask about our services, opening hours, location, how to order, or how to track your order. You can also tap one of the quick options below."
+            };
+
+            const ordersStore = {};
+            const transactions = [];
+
+            // ============================================================
+            // 2. DOM REFERENCES
+            // ============================================================
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            const chatbotClose = document.getElementById('chatbotClose');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const chatbotOptions = document.getElementById('chatbotOptions');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotSend = document.getElementById('chatbotSend');
+            const toastMessage = document.getElementById('toastMessage');
+
+            const placeOrderBtn = document.getElementById('placeOrderBtn');
+            const trackOrderBtn = document.getElementById('trackOrderBtn');
+            const trackResult = document.getElementById('trackResult');
+            const orderNameInput = document.getElementById('orderName');
+            const orderItemSelect = document.getElementById('orderItem');
+            const orderQtyInput = document.getElementById('orderQty');
+            const trackOrderIdInput = document.getElementById('trackOrderId');
+            const transactionHistoryDiv = document.getElementById('transactionHistory');
+
+            // ============================================================
+            // 3. UTILITY FUNCTIONS
+            // ============================================================
+            function showToast(message, duration = 2800) {
+                toastMessage.textContent = message;
+                toastMessage.classList.add('show');
+                clearTimeout(toastMessage._timeout);
+                toastMessage._timeout = setTimeout(() => {
+                    toastMessage.classList.remove('show');
+                }, duration);
+            }
+
+            function scrollChatToBottom() {
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+
+            function addMessage(text, sender = 'bot') {
+                const msgDiv = document.createElement('div');
+                msgDiv.classList.add('msg', sender);
+                msgDiv.textContent = text;
+                chatbotMessages.appendChild(msgDiv);
+                scrollChatToBottom();
+            }
+
+            function highlightServiceCard(serviceKey) {
+                const service = services[serviceKey];
+                if (!service) return;
+
+                // Ensure we're on the services tab
+                switchTab('services');
+
+                document.querySelectorAll('.service-card').forEach(card => {
+                    card.classList.remove('highlight');
+                });
+
+                const card = document.getElementById(service.cardId);
+                if (card) {
+                    card.classList.add('highlight');
+                    setTimeout(() => {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+
+                    clearTimeout(card._highlightTimeout);
+                    card._highlightTimeout = setTimeout(() => {
+                        card.classList.remove('highlight');
+                    }, 2500);
+
+                    showToast(`📍 ${service.name}`);
+                }
+            }
+
+            function renderTransactionHistory() {
+                if (transactions.length === 0) {
+                    transactionHistoryDiv.innerHTML = '<div class="empty-tx">No transactions yet.</div>';
+                    return;
+                }
+                let html = '';
+                transactions.slice().reverse().forEach(tx => {
+                    html += `<div class="tx-row">
+                        <span class="tx-id">${tx.id}</span>
+                        <span class="tx-amount">${tx.amount}</span>
+                    </div>`;
+                });
+                transactionHistoryDiv.innerHTML = html;
+            }
+
+            // ============================================================
+            // 4. TAB SYSTEM
+            // ============================================================
+            function switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    const isActive = btn.dataset.tab === tabName;
+                    btn.classList.toggle('active', isActive);
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                // Update panels
+                document.querySelectorAll('.tab-panel').forEach(panel => {
+                    panel.classList.toggle('active', panel.id === `tab-${tabName}`);
+                });
+            }
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    switchTab(btn.dataset.tab);
+                });
+            });
+
+            // ============================================================
+            // 5. CHATBOT LOGIC
+            // ============================================================
+            function getBotReply(input) {
+                const lower = input.toLowerCase().trim();
+
+                if (/(hello|hi|hey|good\s*(morning|afternoon|evening)|howzit|hiya)/i.test(lower)) {
+                    return botReplies.greeting;
+                }
+                if (/(hour|open|close|time|when.*open|operating)/i.test(lower)) {
+                    return botReplies.hours;
+                }
+                if (/(where|location|address|find|directions|situated)/i.test(lower)) {
+                    return botReplies.location;
+                }
+                if (/(track|status|where.*order|order.*status)/i.test(lower)) {
+                    return botReplies.track;
+                }
+                if (/(order|buy|purchase|price|cost|how much|delivery)/i.test(lower)) {
+                    return botReplies.order;
+                }
+                if (/(thank|thanks|cheers|appreciate)/i.test(lower)) {
+                    return botReplies.thanks;
+                }
+
+                if (/(bakery|bread|rolls|croissant|muffin|pastr)/i.test(lower)) {
+                    highlightServiceCard('bakery');
+                    return `Our Fresh Artisan Bakery offers ${services.bakery.description} Would you like to know more?`;
+                }
+                if (/(coffee|beverage|drink|tea|cappuccino|latte|espresso)/i.test(lower)) {
+                    highlightServiceCard('coffee');
+                    return `Our Coffee & Beverages selection includes ${services.coffee.description} Perfect for a morning treat!`;
+                }
+                if (/(deli|sandwich|salad|savoury|meal|lunch)/i.test(lower)) {
+                    highlightServiceCard('deli');
+                    return `Our Deli & Fresh Meals feature ${services.deli.description} Freshly made daily.`;
+                }
+                if (/(cake|special order|celebration|birthday|wedding|custom)/i.test(lower)) {
+                    highlightServiceCard('cakes');
+                    return `We create beautiful custom cakes and baked goods for any occasion. ${services.cakes.description}`;
+                }
+                if (/(breakfast|light bite|morning|brunch)/i.test(lower)) {
+                    highlightServiceCard('breakfast');
+                    return `Start your day right with our Breakfast & Light Bites: ${services.breakfast.description}`;
+                }
+
+                return botReplies.fallback;
+            }
+
+            function handleUserMessage() {
+                const text = chatbotInput.value.trim();
+                if (!text) return;
+
+                addMessage(text, 'user');
+                chatbotInput.value = '';
+                chatbotInput.focus();
+
+                setTimeout(() => {
+                    const reply = getBotReply(text);
+                    addMessage(reply, 'bot');
+                }, 400);
+            }
+
+            function renderChatbotOptions() {
+                const options = [
+                    { label: '🕖 Opening Hours', action: 'hours' },
+                    { label: '📍 Location', action: 'location' },
+                    { label: '📞 How to Order', action: 'order' },
+                    { label: '📦 Track Order', action: 'track' },
+                    { label: '🥐 Our Services', action: 'services' },
+                    { label: '👋 Greeting', action: 'greeting' }
+                ];
+
+                chatbotOptions.innerHTML = '';
+
+                options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.textContent = opt.label;
+                    btn.addEventListener('click', () => {
+                        if (opt.action === 'services') {
+                            addMessage('Here are our services:', 'bot');
+                            switchTab('services');
+                            Object.keys(services).forEach((key, index) => {
+                                setTimeout(() => {
+                                    const s = services[key];
+                                    addMessage(`✦ ${s.name} — ${s.description}`, 'bot');
+                                    highlightServiceCard(key);
+                                }, index * 300);
+                            });
+                        } else if (opt.action === 'order') {
+                            switchTab('order');
+                            addMessage(botReplies.order, 'bot');
+                        } else if (opt.action === 'track') {
+                            switchTab('order');
+                            addMessage(botReplies.track, 'bot');
+                        } else {
+                            const userMsg = opt.label.replace(/[^\w\s]/g, '').trim();
+                            addMessage(userMsg, 'user');
+                            setTimeout(() => {
+                                const reply = getBotReply(opt.action);
+                                addMessage(reply, 'bot');
+                            }, 300);
+                        }
+                    });
+                    chatbotOptions.appendChild(btn);
+                });
+            }
+
+            function initChatbot() {
+                chatbotMessages.innerHTML = '';
+                addMessage("Hello! 👋 I'm the Mokopane assistant. How can I help you today?", 'bot');
+                renderChatbotOptions();
+            }
+
+            // ============================================================
+            // 6. ORDER & TRACK LOGIC
+            // ============================================================
+            function generateOrderId() {
+                const num = Math.floor(1000 + Math.random() * 9000);
+                return `MKP-${num}`;
+            }
+
+            function getOrderStatus(order) {
+                const elapsed = (Date.now() - order.createdAt) / 1000;
+                if (elapsed < 10) {
+                    return { status: 'preparing', label: 'Preparing', className: 'preparing' };
+                } else if (elapsed < 25) {
+                    return { status: 'ready', label: 'Ready for pickup', className: 'ready' };
+                } else {
+                    return { status: 'out-for-delivery', label: 'Out for delivery', className: 'out-for-delivery' };
+                }
+            }
+
+            function handlePlaceOrder() {
+                const name = orderNameInput.value.trim();
+                const item = orderItemSelect.value;
+                const qty = parseInt(orderQtyInput.value, 10) || 1;
+
+                if (!name) {
+                    showToast('⚠️ Please enter your name.');
+                    orderNameInput.focus();
+                    return;
+                }
+
+                if (qty < 1 || qty > 20) {
+                    showToast('⚠️ Quantity must be between 1 and 20.');
+                    orderQtyInput.focus();
+                    return;
+                }
+
+                const priceMap = {
+                    "Sourdough Loaf": 45,
+                    "Croissant (2)": 35,
+                    "Muffin (4)": 50,
+                    "Cappuccino": 28,
+                    "Breakfast Platter": 85,
+                    "Custom Cake": 250,
+                    "Brioche Loaf": 55,
+                    "Almond Croissant": 24,
+                    "Garden Salad": 65,
+                    "Chicken Mayo Sandwich": 48
+                };
+                const price = priceMap[item] || 30;
+                const total = price * qty;
+
+                const orderId = generateOrderId();
+                const order = {
+                    id: orderId,
+                    name: name,
+                    item: item,
+                    qty: qty,
+                    total: total,
+                    createdAt: Date.now()
+                };
+
+                ordersStore[orderId] = order;
+
+                transactions.push({
+                    id: orderId,
+                    amount: `R ${total.toFixed(2)}`
+                });
+                renderTransactionHistory();
+
+                showToast(`✅ Order ${orderId} placed successfully!`, 3500);
+                addMessage(`✅ Order ${orderId} confirmed for ${name}: ${qty} x ${item}. Total R ${total.toFixed(2)}. You can track it using the Track panel.`, 'bot');
+
+                orderNameInput.value = '';
+                orderQtyInput.value = '1';
+                trackOrderIdInput.value = orderId;
+            }
+
+            function handleTrackOrder() {
+                const enteredId = trackOrderIdInput.value.trim().toUpperCase();
+
+                if (!enteredId) {
+                    showToast('⚠️ Please enter an order ID.');
+                    trackResult.textContent = '';
+                    trackResult.classList.remove('show');
+                    return;
+                }
+
+                const order = ordersStore[enteredId];
+
+                if (!order) {
+                    trackResult.innerHTML = `
+                        <strong>Order not found.</strong> Please check your order ID and try again.<br>
+                        <span style="font-size:0.85rem; color:#7a5d3e;">Tip: place an order first to receive an ID.</span>
+                    `;
+                    trackResult.classList.add('show');
+                    return;
+                }
+
+                const status = getOrderStatus(order);
+
+                trackResult.innerHTML = `
+                    <strong>Order ${order.id}</strong><br>
+                    ${order.qty} × ${order.item} for ${order.name}<br>
+                    Total: R ${order.total.toFixed(2)}<br>
+                    Status: <span class="status-badge ${status.className}">${status.label}</span>
+                `;
+                trackResult.classList.add('show');
+                showToast(`📦 ${order.id}: ${status.label}`);
+            }
+
+            // ============================================================
+            // 7. EVENT LISTENERS
+            // ============================================================
+            chatbotToggle.addEventListener('click', () => {
+                const isOpen = chatbotContainer.classList.contains('open');
+                if (isOpen) {
+                    chatbotContainer.classList.remove('open');
+                } else {
+                    chatbotContainer.classList.add('open');
+                    if (chatbotMessages.children.length === 0) {
+                        initChatbot();
+                    }
+                    chatbotInput.focus();
+                }
+            });
+
+            chatbotClose.addEventListener('click', () => {
+                chatbotContainer.classList.remove('open');
+            });
+
+            chatbotSend.addEventListener('click', handleUserMessage);
+            chatbotInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleUserMessage();
+                }
+            });
+
+            placeOrderBtn.addEventListener('click', handlePlaceOrder);
+            trackOrderBtn.addEventListener('click', handleTrackOrder);
+            trackOrderIdInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleTrackOrder();
+                }
+            });
+
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    if (e.target.closest('a') || e.target.closest('button')) return;
+                    const serviceKey = card.dataset.service;
+                    if (serviceKey) {
+                        highlightServiceCard(serviceKey);
+                    }
+                });
+            });
+
+            // ============================================================
+            // 8. INITIALIZATION
+            // ============================================================
+            renderTransactionHistory();
+
+            // After the welcome overlay fades out, show a helpful toast
+            setTimeout(() => {
+                showToast('💬 Tap the chat button or use the tabs to explore our services, prices, and ordering!', 4500);
+            }, 3800);
+
+        })();
+    </script>
+
+</body>
+</html>

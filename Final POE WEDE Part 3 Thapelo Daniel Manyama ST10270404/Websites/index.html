@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    
+    
+    <meta name="description" content="Mokopane Artisan Bakery &amp; Deli offers fresh sourdough, handmade pastries, artisan cheeses, cured meats and gourmet sandwiches in Mokopane, Limpopo. Visit us or order custom cakes.">
+    <meta name="keywords" content="Mokopane bakery, artisan bakery, deli, sourdough bread, pastries, croissants, cheese board, custom cakes, Limpopo bakery, fresh bread Mokopane">
+    <meta name="author" content="Mokopane Artisan Bakery &amp; Deli">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#7a5233">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fcf8f3;
+            color: #3d2c1e;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.25s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 14px;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a87c, #a67c4e, #c9a87c, transparent);
+            margin: 10px 0 30px 0;
+            background-size: 200% 100%;
+            animation: shimmerLine 4s linear infinite;
+        }
+
+        @keyframes shimmerLine {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* ===== HEADER ===== */
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .header-table td {
+            padding: 12px 0;
+            vertical-align: middle;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .logo-area img {
+            height: 70px;
+            width: auto;
+            border-radius: 0;
+            margin-right: 4px;
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.4);
+            animation: logoFloat 6s ease-in-out infinite;
+        }
+
+        .logo-area img:hover {
+            transform: rotate(-6deg) scale(1.06);
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(-2deg); }
+        }
+
+        .logo-area h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #5a3e28;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #7a5233, #a67c4e, #7a5233);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #4a3522;
+            letter-spacing: 0.3px;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: #b8895c;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #7a5233;
+        }
+
+        /* ===== WELCOME ===== */
+        .welcome-section {
+            padding: 20px 0 10px 0;
+        }
+
+        .welcome-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #4a3522;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .welcome-section h2 span {
+            background: linear-gradient(135deg, #b8895c, #8b6542, #b8895c);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        .welcome-section p {
+            font-size: 1.05rem;
+            color: #4d3a2a;
+            max-width: 900px;
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+
+        .welcome-section h2::after {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background: #b8895c;
+            margin-left: 6px;
+            vertical-align: text-bottom;
+            animation: blinkCursor 1s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ===== WELCOME HERO IMAGE STRIP (NEW) ===== */
+        .hero-strip {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0 10px;
+        }
+
+        .hero-strip figure {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid #eee3d7;
+            box-shadow: 0 10px 26px rgba(90, 62, 40, 0.10);
+            cursor: pointer;
+        }
+
+        .hero-strip figure:first-child {
+            grid-row: span 2;
+        }
+
+        .hero-strip img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2), filter 0.4s;
+        }
+
+        .hero-strip figure:first-child img { min-height: 340px; }
+        .hero-strip figure:not(:first-child) img { min-height: 160px; }
+
+        .hero-strip figure:hover img {
+            transform: scale(1.06) rotate(0.4deg);
+            filter: brightness(1.05) saturate(1.08);
+        }
+
+        .hero-strip figcaption {
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 24px 18px 14px;
+            color: #fffdf9;
+            font-weight: 600;
+            font-size: 0.98rem;
+            letter-spacing: 0.3px;
+            background: linear-gradient(transparent, rgba(40, 26, 16, 0.78));
+            transform: translateY(8px);
+            opacity: 0.92;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hero-strip figure:hover figcaption {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ===== FEATURES ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 30px 0 40px 0;
+        }
+
+        .feature-card {
+            background: #fffdf9;
+            padding: 22px 20px 26px 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 28px rgba(90, 62, 40, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.35s ease;
+            text-align: center;
+            border: 1px solid #f0e4d8;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 44px rgba(90, 62, 40, 0.16);
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4a3522;
+            margin-bottom: 12px;
+            transition: letter-spacing 0.3s ease;
+        }
+
+        .feature-card:hover h3 {
+            letter-spacing: 0.5px;
+            color: #7a5233;
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            border: 1px solid #eee3d7;
+            transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.4), filter 0.4s ease;
+        }
+
+        .feature-card:hover img {
+            transform: scale(1.04) rotate(0.5deg);
+            filter: brightness(1.05) saturate(1.05);
+        }
+
+        .feature-card p {
+            font-size: 0.98rem;
+            color: #5a4533;
+            line-height: 1.6;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            margin: 50px 0 40px;
+            padding: 0 10px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            background: #f0e6db;
+            border-radius: 32px;
+            padding: 20px 20px 40px;
+            box-shadow: 0 30px 50px -20px rgba(90, 62, 40, 0.3);
+            border: 1px solid #e2d3c4;
+            overflow: hidden;
+            transition: box-shadow 0.4s;
+        }
+
+        .video-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 34px;
+            background: linear-gradient(135deg, rgba(184, 137, 92, 0.4), transparent, rgba(184, 137, 92, 0.4));
+            background-size: 300% 300%;
+            z-index: -1;
+            animation: borderGlow 6s ease infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .video-wrapper:hover {
+            box-shadow: 0 40px 60px -20px rgba(90, 62, 40, 0.4);
+        }
+
+        .video-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .video-header span {
+            animation: spinPop 3s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes spinPop {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(12deg) scale(1.15); }
+        }
+
+        .video-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #3d2c1e;
+            letter-spacing: -0.3px;
+            background: linear-gradient(145deg, #6b4d32, #a57b55, #6b4d32);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+            background: #1e1a16;
+            transition: transform 0.3s ease;
+        }
+
+        .video-container video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            object-fit: cover;
+            border-radius: 24px;
+            transition: filter 0.5s ease, transform 0.6s ease;
+        }
+
+        .video-container:hover video {
+            filter: brightness(1.03) contrast(1.02);
+            transform: scale(1.01);
+        }
+
+        .video-caption {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            color: #4f3a28;
+            font-weight: 500;
+            padding: 0 12px;
+        }
+
+        .video-caption p {
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #4f3a28;
+        }
+
+        .video-caption p i {
+            display: inline-block;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.3) rotate(15deg); opacity: 0.8; }
+        }
+
+        .video-badge {
+            background: #b8895c20;
+            border-radius: 60px;
+            padding: 10px 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #7a5233;
+            border: 1px solid #b8895c50;
+            backdrop-filter: blur(2px);
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-badge::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        .video-badge:hover::after {
+            width: 250px;
+            height: 250px;
+        }
+
+        .video-badge:hover {
+            background: #b8895c40;
+            color: #4a3522;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(122, 82, 51, 0.25);
+        }
+
+        .pulse-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #c47b3c;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 0 0 rgba(196, 123, 60, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(196, 123, 60, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(196, 123, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(196, 123, 60, 0); }
+        }
+
+        /* ===== GALLERY (NEW) ===== */
+        .gallery-section {
+            margin: 50px 0 40px;
+        }
+
+        .gallery-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #4a3522;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .gallery-section > p {
+            text-align: center;
+            color: #5a4533;
+            max-width: 720px;
+            margin: 0 auto 28px;
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 170px;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid #eee3d7;
+            box-shadow: 0 8px 22px rgba(90, 62, 40, 0.08);
+            cursor: pointer;
+        }
+
+        .gallery-item.wide { grid-column: span 2; }
+        .gallery-item.tall { grid-row: span 2; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2), filter 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1.06) saturate(1.08);
+        }
+
+        .gallery-item .gallery-label {
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 26px 16px 12px;
+            color: #fffdf9;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: linear-gradient(transparent, rgba(40, 26, 16, 0.8));
+            transform: translateY(10px);
+            opacity: 0;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+        }
+
+        .gallery-item:hover .gallery-label {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ===== STORY / INFO SECTION (NEW) ===== */
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 50px 0 40px;
+            background: #f5ede4;
+            border-radius: 28px;
+            padding: 36px;
+            border: 1px solid #e8dcd0;
+            box-shadow: 0 14px 36px rgba(90, 62, 40, 0.07);
+        }
+
+        .story-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3d2c1e;
+            margin-bottom: 14px;
+        }
+
+        .story-text p {
+            color: #4d3a2a;
+            font-size: 1.02rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .story-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .stat {
+            background: #fffdf9;
+            border-radius: 16px;
+            padding: 16px 10px;
+            text-align: center;
+            border: 1px solid #eee3d7;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(90, 62, 40, 0.12);
+        }
+
+        .stat .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #7a5233;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat .stat-label {
+            font-size: 0.8rem;
+            color: #6b5540;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .story-image {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid #e2d3c4;
+            box-shadow: 0 18px 40px rgba(90, 62, 40, 0.18);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 320px;
+            transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        }
+
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .story-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(200deg, transparent 55%, rgba(40, 26, 16, 0.35));
+            pointer-events: none;
+        }
+
+        .story-image .story-badge {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background: rgba(255, 253, 249, 0.92);
+            color: #5a3e28;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 10px 18px;
+            border-radius: 60px;
+            border: 1px solid #e6d9cd;
+            backdrop-filter: blur(3px);
+            z-index: 2;
+        }
+
+        /* ===== ABOUT SNIPPET ===== */
+        .about-snippet {
+            background: #f5ede4;
+            padding: 40px 30px;
+            border-radius: 24px;
+            margin: 10px 0 40px 0;
+            text-align: center;
+            border-left: 6px solid #b8895c;
+            transition: border-left-width 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-snippet:hover {
+            border-left-width: 10px;
+            box-shadow: 0 10px 30px rgba(90, 62, 40, 0.1);
+        }
+
+        .about-snippet h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3d2c1e;
+            margin-bottom: 14px;
+        }
+
+        .about-snippet p {
+            font-size: 1.05rem;
+            max-width: 800px;
+            margin: 0 auto 10px auto;
+            color: #4d3a2a;
+            line-height: 1.8;
+        }
+
+        .about-snippet .btn-about {
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #7a5233;
+            border-bottom: 2px solid #dcc2aa;
+            padding-bottom: 3px;
+            transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .about-snippet .btn-about:hover {
+            border-color: #7a5233;
+            color: #3d2c1e;
+            transform: translateX(4px);
+        }
+
+        /* ===== SERVICES ===== */
+        .services-section {
+            margin: 30px 0 40px 0;
+            text-align: center;
+        }
+
+        .services-section>h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #4a3522;
+            margin-bottom: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: #fffdf9;
+            padding: 22px 16px 24px 16px;
+            border-radius: 20px;
+            box-shadow: 0 6px 22px rgba(90, 62, 40, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #efe6db;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 34px rgba(90, 62, 40, 0.10);
+        }
+
+        .service-card strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #4a3522;
+            margin-bottom: 8px;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            border: 1px solid #eee3d7;
+        }
+
+        .service-card p {
+            font-size: 0.94rem;
+            color: #5a4533;
+            line-height: 1.5;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            background: #f5ede4;
+            padding: 40px 30px;
+            border-radius: 24px;
+            margin: 10px 0 30px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3d2c1e;
+            margin-bottom: 10px;
+        }
+
+        .contact-section>p {
+            font-size: 1.05rem;
+            color: #4d3a2a;
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            display: inline-block;
+            text-align: left;
+            background: #fffdf9;
+            padding: 22px 36px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(90, 62, 40, 0.06);
+            border: 1px solid #e6d9cd;
+        }
+
+        .contact-details p {
+            margin: 6px 0;
+            font-size: 1rem;
+        }
+
+        .contact-details strong {
+            color: #5a3e28;
+            font-weight: 600;
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        .contact-details .contact-value {
+            color: #3d2c1e;
+            font-weight: 400;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 26px 0 16px 0;
+            border-top: 2px solid #e6d9cd;
+            margin-top: 16px;
+        }
+
+        .footer p {
+            font-size: 0.95rem;
+            color: #5a4533;
+            margin: 4px 0;
+        }
+
+        .footer strong {
+            font-weight: 600;
+            color: #4a3522;
+        }
+
+        .footer .sub {
+            font-size: 0.85rem;
+            color: #8b755f;
+            font-style: italic;
+            animation: subPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes subPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #7a5233;
+            color: #fcf8f3;
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 20px rgba(60, 40, 20, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, background 0.3s, transform 0.3s;
+            z-index: 999;
+            border: none;
+            cursor: pointer;
+        }
+
+        .to-top.show {
+            opacity: 1;
+            visibility: visible;
+            animation: bobUpDown 2.5s ease-in-out infinite;
+        }
+
+        .to-top:hover {
+            background: #5e3f28;
+            transform: scale(1.1);
+            animation-play-state: paused;
+        }
+
+        @keyframes bobUpDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* ===== SCROLL REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(30px) scale(0.97);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        .reveal-stagger.active > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0) scale(1); }
+        .reveal-stagger.active > *:nth-child(2) { transition-delay: 0.18s; opacity: 1; transform: translateY(0) scale(1); }
+        .reveal-stagger.active > *:nth-child(3) { transition-delay: 0.31s; opacity: 1; transform: translateY(0) scale(1); }
+        .reveal-stagger.active > *:nth-child(4) { transition-delay: 0.44s; opacity: 1; transform: translateY(0) scale(1); }
+        .reveal-stagger.active > *:nth-child(5) { transition-delay: 0.57s; opacity: 1; transform: translateY(0) scale(1); }
+
+        /* ===== ACCORDION & TABS ===== */
+        .interactive-section {
+            margin: 50px 0 40px;
+        }
+
+        .interactive-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #4a3522;
+            margin-bottom: 24px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 6px;
+        }
+
+        .interactive-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #b8895c, #7a5233, #b8895c);
+            background-size: 200% auto;
+            border-radius: 4px;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .accordion-item {
+            background: #fffdf9;
+            border-radius: 18px;
+            border: 1px solid #f0e4d8;
+            box-shadow: 0 4px 14px rgba(90, 62, 40, 0.04);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 8px 22px rgba(90, 62, 40, 0.08);
+            transform: translateX(4px);
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #4a3522;
+            transition: background 0.2s, color 0.2s, padding 0.3s;
+            text-align: left;
+        }
+
+        .accordion-header:hover {
+            background: #faf2ea;
+            padding-left: 28px;
+        }
+
+        .accordion-header .icon {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #b8895c;
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.4), color 0.3s;
+            line-height: 1;
+            display: inline-block;
+        }
+
+        .accordion-item.open .accordion-header .icon {
+            transform: rotate(135deg);
+            color: #7a5233;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.2, 0.9, 0.3, 1), padding 0.3s;
+            padding: 0 24px;
+            background: #fefcf9;
+        }
+
+        .accordion-item.open .accordion-content {
+            max-height: 320px;
+            padding: 0 24px 22px 24px;
+        }
+
+        .accordion-content p {
+            margin: 0;
+            color: #5a4533;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            animation: fadeSlideIn 0.4s ease both;
+        }
+
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tabs {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fffdf9;
+            border-radius: 24px;
+            border: 1px solid #f0e4d8;
+            box-shadow: 0 6px 18px rgba(90, 62, 40, 0.06);
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #f8f1ea;
+            border-bottom: 1px solid #e8dcd0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            flex: 1 1 auto;
+            background: transparent;
+            border: none;
+            padding: 16px 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #7a5233;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            border-bottom: 3px solid transparent;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #b8895c;
+            transition: width 0.35s ease;
+            border-radius: 3px;
+        }
+
+        .tab-btn:hover::before {
+            width: 60%;
+        }
+
+        .tab-btn:hover {
+            background: #efe6dc;
+            color: #3d2c1e;
+        }
+
+        .tab-btn.active {
+            background: #fffdf9;
+            color: #3d2c1e;
+            font-weight: 700;
+        }
+
+        .tab-btn.active::before {
+            width: 100%;
+            background: #7a5233;
+        }
+
+        .tab-panel {
+            display: none;
+            padding: 26px 28px 30px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .tab-panel h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #4a3522;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .tab-panel p {
+            color: #5a4533;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .tab-panel ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        .tab-panel ul li {
+            padding: 6px 0 6px 26px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='%23b8895c'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E") left center no-repeat;
+            background-size: 14px;
+            color: #4d3a2a;
+            font-size: 0.98rem;
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+
+        .tab-panel ul li:hover {
+            transform: translateX(5px);
+            color: #7a5233;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.3; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(40, 28, 18, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            padding: 20px;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: #fffdf9;
+            max-width: 560px;
+            width: 100%;
+            border-radius: 28px;
+            box-shadow: 0 40px 80px -20px rgba(40, 20, 10, 0.5);
+            padding: 32px 30px 30px;
+            position: relative;
+            border: 1px solid #e6d9cd;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.4);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.open .modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            color: #8b755f;
+            cursor: pointer;
+            transition: color 0.2s, transform 0.3s;
+            padding: 4px;
+        }
+
+        .modal-close:hover {
+            color: #3d2c1e;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: #3d2c1e;
+            margin-bottom: 10px;
+            padding-right: 24px;
+            font-weight: 700;
+        }
+
+        .modal p {
+            color: #5a4533;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .modal .modal-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin: 12px 0 16px;
+            border: 1px solid #eee3d7;
+            animation: modalImgReveal 0.6s ease both;
+        }
+
+        @keyframes modalImgReveal {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal .modal-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .modal .btn {
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            flex: 1 1 auto;
+        }
+
+        .modal .btn-primary {
+            background: #7a5233;
+            color: #fcf8f3;
+            box-shadow: 0 6px 14px rgba(122, 82, 51, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        .modal .btn-primary:hover::after {
+            width: 250px;
+            height: 250px;
+        }
+
+        .modal .btn-primary:hover {
+            background: #5e3f28;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(94, 63, 40, 0.35);
+        }
+
+        .modal .btn-secondary {
+            background: #f0e4d8;
+            color: #4a3522;
+        }
+
+        .modal .btn-secondary:hover {
+            background: #e6d6c8;
+            transform: translateY(-2px);
+        }
+
+        /* ===== CHATBOT (NEW) ===== */
+        .chat-launcher {
+            position: fixed;
+            bottom: 96px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #7a5233, #5e3f28);
+            color: #fcf8f3;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            box-shadow: 0 12px 28px rgba(60, 40, 20, 0.38);
+            z-index: 1500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: chatPulse 2.8s ease-in-out infinite;
+        }
+
+        .chat-launcher:hover {
+            transform: scale(1.08) rotate(-4deg);
+            box-shadow: 0 16px 34px rgba(60, 40, 20, 0.5);
+            animation-play-state: paused;
+        }
+
+        .chat-launcher .chat-dot {
+            position: absolute;
+            top: 4px;
+            right: 6px;
+            width: 12px;
+            height: 12px;
+            background: #e8a45c;
+            border-radius: 50%;
+            border: 2px solid #fcf8f3;
+            animation: blinkCursor 1.2s step-end infinite;
+        }
+
+        @keyframes chatPulse {
+            0%, 100% { box-shadow: 0 12px 28px rgba(60, 40, 20, 0.38), 0 0 0 0 rgba(184, 137, 92, 0.5); }
+            50% { box-shadow: 0 12px 28px rgba(60, 40, 20, 0.38), 0 0 0 14px rgba(184, 137, 92, 0); }
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 168px;
+            right: 30px;
+            width: 360px;
+            max-width: calc(100vw - 32px);
+            max-height: 520px;
+            background: #fffdf9;
+            border-radius: 24px;
+            border: 1px solid #e6d9cd;
+            box-shadow: 0 30px 70px -20px rgba(40, 20, 10, 0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1600;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.96);
+            transform-origin: bottom right;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.3);
+        }
+
+        .chat-window.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #7a5233, #5e3f28);
+            color: #fcf8f3;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0e4d8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            border: 2px solid rgba(255, 253, 249, 0.5);
+        }
+
+        .chat-header-info h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .chat-header-info span {
+            font-size: 0.78rem;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .chat-header-info span::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #8ed081;
+            display: inline-block;
+            animation: blinkCursor 1.6s step-end infinite;
+        }
+
+        .chat-header .chat-close {
+            margin-left: auto;
+            background: transparent;
+            border: none;
+            color: #f0e4d8;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 4px 6px;
+            border-radius: 8px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .chat-header .chat-close:hover {
+            background: rgba(255, 255, 255, 0.16);
+            transform: rotate(90deg);
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #fdf9f4;
+            scroll-behavior: smooth;
+        }
+
+        .chat-messages::-webkit-scrollbar { width: 8px; }
+        .chat-messages::-webkit-scrollbar-track { background: transparent; }
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #e2d3c4;
+            border-radius: 8px;
+        }
+
+        .msg {
+            max-width: 82%;
+            padding: 11px 15px;
+            border-radius: 18px;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            animation: msgPop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+            word-wrap: break-word;
+        }
+
+        @keyframes msgPop {
+            from { opacity: 0; transform: translateY(10px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .msg.bot {
+            background: #fffdf9;
+            color: #4a3522;
+            border: 1px solid #eee3d7;
+            align-self: flex-start;
+            border-bottom-left-radius: 6px;
+            box-shadow: 0 3px 10px rgba(90, 62, 40, 0.05);
+        }
+
+        .msg.user {
+            background: linear-gradient(135deg, #7a5233, #8b6542);
+            color: #fffdf9;
+            align-self: flex-end;
+            border-bottom-right-radius: 6px;
+            box-shadow: 0 4px 12px rgba(122, 82, 51, 0.28);
+        }
+
+        .msg.typing {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            padding: 14px 18px;
+        }
+
+        .msg.typing span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #b8895c;
+            animation: typingBounce 1.2s ease-in-out infinite;
+        }
+
+        .msg.typing span:nth-child(2) { animation-delay: 0.15s; }
+        .msg.typing span:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+            30% { transform: translateY(-6px); opacity: 1; }
+        }
+
+        .chat-quick {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 16px 4px;
+            background: #fdf9f4;
+            flex-shrink: 0;
+        }
+
+        .quick-chip {
+            background: #fffdf9;
+            border: 1px solid #e2d3c4;
+            color: #7a5233;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 7px 13px;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .quick-chip:hover {
+            background: #f0e4d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(90, 62, 40, 0.12);
+        }
+
+        .chat-input-row {
+            display: flex;
+            gap: 8px;
+            padding: 12px 14px 16px;
+            background: #fdf9f4;
+            border-top: 1px solid #eee3d7;
+            flex-shrink: 0;
+        }
+
+        .chat-input-row input {
+            flex: 1;
+            border: 1px solid #e2d3c4;
+            background: #fffdf9;
+            border-radius: 60px;
+            padding: 12px 18px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #3d2c1e;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .chat-input-row input:focus {
+            border-color: #b8895c;
+            box-shadow: 0 0 0 3px rgba(184, 137, 92, 0.18);
+        }
+
+        .chat-input-row input::placeholder { color: #a8937f; }
+
+        .chat-send {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #7a5233, #5e3f28);
+            color: #fcf8f3;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 6px 14px rgba(122, 82, 51, 0.3);
+        }
+
+        .chat-send:hover {
+            transform: scale(1.08) rotate(-8deg);
+            box-shadow: 0 10px 20px rgba(122, 82, 51, 0.4);
+        }
+
+        .chat-send:active { transform: scale(0.95); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .story-section {
+                grid-template-columns: 1fr;
+                padding: 28px;
+            }
+
+            .story-image { order: -1; }
+            .story-image img { min-height: 240px; }
+        }
+
+        @media (max-width: 820px) {
+            .header-table td {
+                display: block;
+                text-align: center !important;
+                padding: 6px 0;
+            }
+
+            .logo-area { justify-content: center; }
+            .logo-area h1 { font-size: 1.5rem; }
+
+            .nav-links {
+                justify-content: center;
+                gap: 18px;
+                margin-top: 4px;
+            }
+
+            .features-grid { grid-template-columns: 1fr 1fr; }
+
+            .welcome-section h2 { font-size: 2rem; }
+
+            .tab-btn {
+                font-size: 0.85rem;
+                padding: 14px 12px;
+            }
+
+            .hero-strip {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-strip figure:first-child {
+                grid-column: span 2;
+                grid-row: auto;
+            }
+
+            .hero-strip figure:first-child img { min-height: 220px; }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 150px;
+            }
+
+            .story-stats { grid-template-columns: repeat(3, 1fr); }
+
+            .chat-window { bottom: 158px; right: 16px; }
+            .chat-launcher { bottom: 92px; right: 16px; }
+            .to-top { right: 16px; bottom: 24px; }
+        }
+
+        @media (max-width: 580px) {
+            .container { padding: 0 16px; }
+
+            .features-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .logo-area h1 { font-size: 1.2rem; }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a { font-size: 0.9rem; }
+            .welcome-section h2 { font-size: 1.6rem; }
+
+            .contact-details {
+                padding: 16px 20px;
+                width: 100%;
+            }
+
+            .video-header h3 { font-size: 1.5rem; }
+
+            .modal { padding: 28px 20px 24px; }
+            .modal h2 { font-size: 1.5rem; }
+            .tab-panel { padding: 20px 18px; }
+
+            .accordion-header {
+                padding: 16px 18px;
+                font-size: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 190px;
+            }
+
+            .gallery-item.wide,
+            .gallery-item.tall {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            .story-stats { grid-template-columns: 1fr; }
+            .story-section { padding: 20px; }
+            .story-text h2 { font-size: 1.6rem; }
+
+            .chat-window {
+                right: 12px;
+                left: 12px;
+                width: auto;
+                bottom: 150px;
+                max-height: 70vh;
+            }
+
+            .chat-launcher {
+                right: 16px;
+                bottom: 88px;
+                width: 54px;
+                height: 54px;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ===== ACCESSIBILITY: REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== UTILITY ===== */
+        .text-center { text-align: center; }
+        .mt-10 { margin-top: 10px; }
+        .mb-10 { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ========== HEADER ========== -->
+        <table class="header-table">
+            <tr>
+                <td>
+                    <div class="logo-area">
+                        <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Logo.png" alt="Mokopane Bakery Logo">
+                        <h1>Mokopane ARTISAN BAKERY &amp; DELI</h1>
+                    </div>
+                </td>
+                <td>
+                    <div class="nav-links">
+                        <a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\index.html">Home</a>
+                        <a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\About Us.html">About Us</a>
+                        <a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\Services.html">Services</a>
+                        <a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\Enquiry.html">Enquiry</a>
+                        <a href="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Websites\Contact Us.html">Contact Us</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <!-- ========== WELCOME ========== -->
+        <div class="welcome-section reveal" id="home">
+            <h2>Welcome to <span>Mokopane Artisan Bakery &amp; Deli</span></h2>
+            <p>
+                Step into a world where heritage, craftsmanship, and exceptional flavour are brought together under one roof.
+                At Mokopane Artisan Bakery &amp; Deli, every creation is thoughtfully prepared with passion, precision, and pride.
+                From our freshly baked artisan breads to our exquisite handcrafted pastries, quality is at the heart of everything we do.
+                Our carefully curated deli selection offers delicious choices designed to satisfy every taste and occasion.
+                We combine time-honoured baking traditions with contemporary culinary creativity to deliver something truly special.
+                Every ingredient is carefully selected to ensure freshness, authenticity, and outstanding flavour in every bite.
+                We believe that exceptional food should not only satisfy your appetite but also create lasting memories.
+                Whether you are joining us for a morning coffee, a freshly baked treat, or a delicious deli experience, you are always welcome.
+                Our commitment is to provide warm hospitality, remarkable food, and an experience that keeps you coming back for more.
+                Mokopane Artisan Bakery &amp; Deli — where every loaf tells a story, every flavour creates a memory, and every visit feels like home.
+            </p>
+            <br>
+            <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #5a3e28;">Explore Our Bakery</h4>
+        </div>
+
+        <!-- ========== HERO IMAGE STRIP (NEW) ========== -->
+        <div class="hero-strip reveal">
+            <figure>
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Sourdough bread.webp" alt="Artisan sourdough loaves fresh from the oven">
+                <figcaption>Stone-baked sourdough — our daily ritual</figcaption>
+            </figure>
+            <figure>
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Picture of Croissant.png" alt="Golden croissants and pastries">
+                <figcaption>Hand-laminated pastries</figcaption>
+            </figure>
+            <figure>
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Deli Delights.png" alt="Deli counter with cheeses and cured meats">
+                <figcaption>Deli counter favourites</figcaption>
+            </figure>
+            <figure>
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Muffins.png" alt="Mokopane Bakery emblem" style="object-fit: contain; background: #fffdf9; padding: 24px;">
+                <figcaption>Muffins </figcaption>
+            </figure>
+            <figure>
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Premium Cheeses.jpg" alt="Freshly sliced bread on a wooden board" style="filter: saturate(0.9) contrast(1.05);">
+                <figcaption>Slice of the day</figcaption>
+            </figure>
+        </div>
+
+        <!-- ========== FEATURES ========== -->
+        <div class="features-grid reveal-stagger" id="featuresGrid">
+            <div class="feature-card">
+                <h3>Fresh Bread</h3>
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Fresh Bread.jpg" alt="Freshly baked bread">
+                <p>Baked daily with traditional methods and the finest ingredients.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Artisan Pastries</h3>
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Artisan Pastries.png" alt="Artisan pastries">
+                <p>From buttery croissants to sweet danishes — pure indulgence.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Deli Delights</h3>
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Deli Delights.png" alt="Deli delights">
+                <p>Premium cheeses, cured meats, and gourmet sandwiches made to order.</p>
+            </div>
+        </div>
+
+        <!-- ========== STORY / INFO SECTION (NEW) ========== -->
+        <div class="story-section reveal">
+            <div class="story-text">
+                <h2>A Little Flour, A Lot of Heart</h2>
+                <p>What began in 2018 as a tiny home oven and a stubborn sourdough starter has grown into Mokopane's most-loved artisan bakery. We still bake the same way — slowly, by hand, and with ingredients we're proud to name.</p>
+                <p>Our team of eight bakers arrives before sunrise to shape, score, and bake every loaf. We mill a portion of our own flour, source dairy from local farms, and roast our coffee beans just down the road. Nothing is rushed; everything is tasted.</p>
+                <div class="story-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="36">0</span>
+                        <span class="stat-label">Hour ferment</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="8">0</span>
+                        <span class="stat-label">Expert bakers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="2018">0</span>
+                        <span class="stat-label">Established</span>
+                    </div>
+                </div>
+            </div>
+            <div class="story-image">
+                <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Fresh Bread.jpg" alt="Bakers shaping dough by hand">
+                <span class="story-badge"> Baked with patience</span>
+            </div>
+        </div>
+
+        <!-- ========== This is where I add a video annimation  VIDEO SECTION ========== -->
+        <div class="video-section reveal" id="enquiry">
+            <div class="video-wrapper">
+                <div class="video-header">
+                    <span style="font-size: 2rem; margin-right: 5px;"></span>
+                    <h3>Advertisement</h3>
+                </div>
+                <div class="video-container">
+                    <video autoplay loop muted playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='450' viewBox='0 0 800 450'%3E%3Crect width='400' height='450' fill='%233d2c1e'/%3E%3Ctext x='400' y='240' font-family='Arial' font-size='20' fill='%23fcf8f3' text-anchor='middle'%3EMokopane Bakery film%3C/text%3E%3C/svg%3E">
+                        <source src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Videos\pavo-715c27448d1b-0-f56ce563bdee.mp4">
+                        <source src="https://cdn.coverr.co/videos/coverr-baking-bread-in-the-oven-1576/1080p.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-caption">
+                    <p><span class="pulse-dot"></span> <i></i> Freshly baked every morning · artisan craft</p>
+                    <span class="video-badge" id="openModalBtn" role="button" tabindex="0">🎥 Watch our story</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== GALLERY (NEW) ========== -->
+        <div class="gallery-section reveal">
+            <h2>Inside the Bakery</h2>
+            <p>A peek behind the counter — from the crackling crusts of our sourdough to the buttery layers of our pastries and the colourful deli boards we build every morning.</p>
+            <div class="gallery-grid">
+                <figure class="gallery-item wide">
+                    <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Fresh Bread.jpg" alt="Loaves of bread cooling on racks">
+                    <span class="gallery-label">Morning bake · cooling racks</span>
+                </figure>
+                <figure class="gallery-item tall">
+                    <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Muffin2.0.webp" alt="Croissants and danishes">
+                    <span class="gallery-label">Laminated pastry tray</span>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Cheese.jpg" alt="Cheese and charcuterie selection">
+                    <span class="gallery-label">Deli selection</span>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Logo.png" alt="Bakery logo" style="object-fit: contain; background: #fffdf9; padding: 22px;">
+                    <span class="gallery-label">Our emblem</span>
+                </figure>
+                <figure class="gallery-item wide">
+                    <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Fresh Bread.jpg" alt="Sliced bread with butter" style="filter: saturate(0.92);">
+                    <span class="gallery-label">Fresh slice, warm butter</span>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Artisan Pastries.png" alt="Sweet pastry close-up" style="filter: brightness(1.03);">
+                    <span class="gallery-label">Sweet layers</span>
+                </figure>
+            </div>
+        </div>
+
+        <!-- ========== INTERACTIVE: ACCORDION & TABS ========== -->
+        <div class="interactive-section reveal">
+            <h2>Discover More · Interactive</h2>
+
+            <!-- Accordion -->
+            <div class="accordion" id="bakeryAccordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span>Our Sourdough Story</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Our signature sourdough is fermented for 36 hours using a 30‑year‑old starter. The result is a crackling crust, open crumb, and a gentle tang that pairs perfectly with our deli cheeses. Every loaf is hand‑shaped and baked in a stone hearth oven.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span>Morning Pastry Ritual</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Start your day with buttery croissants, pain au chocolat, or our seasonal danishes. Everything is laminated by hand and baked fresh at 5am. Pair with a single‑origin espresso for the complete experience.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span> Deli &amp; Cheese Board</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Our deli counter features local artisan cheeses, cured meats, and house‑made preserves. Create your own board or let our team guide you. Perfect for picnics, gatherings, or a simple evening treat.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span> Coffee &amp; Community</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We serve direct‑trade coffee roasted locally. Every cup is crafted with care — and our communal table is always open. Join us for a tasting, a book, or a friendly chat. It's where the neighbourhood meets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab-nav" role="tablist">
+                    <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tab1">🥖 Breads</button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab2">🍰 Pastries</button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab3">🧀 Deli</button>
+                </div>
+                <div class="tab-panel active" id="tab1" role="tabpanel">
+                    <h3>Our Daily Breads</h3>
+                    <p>From classic country sourdough to seeded rye and olive fougasse — each loaf is fermented slowly and baked to order. We mill some of our own flour for maximum freshness.</p>
+                    <ul>
+                        <li>Country Sourdough — 36h ferment, stone‑baked</li>
+                        <li>Seeded Rye — caraway, sunflower, flax</li>
+                        <li>Olive &amp; Rosemary Fougasse — olive oil, sea salt</li>
+                        <li>Baguette Tradition — crisp crust, open crumb</li>
+                    </ul>
+                </div>
+                <div class="tab-panel" id="tab2" role="tabpanel">
+                    <h3>Hand‑Laminated Pastries</h3>
+                    <p>Our pastry chef folds layer upon layer of European butter into every creation. Baked throughout the morning so there's always something warm.</p>
+                    <ul>
+                        <li>Butter Croissant — 27 layers, flaky perfection</li>
+                        <li>Pain au Chocolat — Valrhona dark chocolate</li>
+                        <li>Almond Danish — house‑made frangipane</li>
+                        <li>Seasonal Fruit Galette — fresh, local fruit</li>
+                    </ul>
+                </div>
+                <div class="tab-panel" id="tab3" role="tabpanel">
+                    <h3>The Deli Counter</h3>
+                    <p>Explore a curated selection of cheeses, charcuterie, and pantry staples. Everything is sourced with an eye for quality and sustainability.</p>
+                    <ul>
+                        <li>Artisan cheeses — local &amp; imported</li>
+                        <li>Cured meats — prosciutto, coppa, bresaola</li>
+                        <li>House‑made preserves &amp; pickles</li>
+                        <li>Gourmet sandwiches made to order</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== Conact Details of Mokopane Artisan Bakery  ========== -->
+        <div class="contact-section reveal" id="contact">
+            <h2>Visit or Say Hello</h2>
+            <p>We'd love to see you. Pop in for a coffee, pick up a loaf, or chat with our team about a custom order.</p>
+            <div class="contact-details">
+                <p><strong> Address</strong> <span class="contact-value">123 Market , Mokopane, Limpopo ,0600</span></p>
+                <p><strong> Phone</strong> <span class="contact-value">+27 15 123 4567</span></p>
+                <p><strong> Email</strong> <span class="contact-value">hello@mokopaneartisan.co.za</span></p>
+                <p><strong> Hours</strong> <span class="contact-value">Mon–Fri 6:30–17:00 · Sat 7:00–14:00 · Sun closed</span></p>
+            </div>
+        </div>
+
+        <!-- ========== FOOTER ========== -->
+        <div class="footer">
+            <p><strong>&copy; 2026 Mokopane Artisan Bakery &amp; Deli</strong> — All rights reserved. <span style="font-weight:400;">Since 2018</span></p>
+            <p class="sub">Built with love and flour.</p>
+        </div>
+
+    </div>
+    <!-- end container -->
+
+    <!-- Back to Top Button -->
+    <button class="to-top" id="toTopBtn" aria-label="Back to top">↑</button>
+
+    <!-- ========== This section i implemented Chatbot  ========== -->
+    <button class="chat-launcher" id="chatLauncher" aria-label="Open chat assistant">
+        💬
+        <span class="chat-dot"></span>
+    </button>
+
+    <div class="chat-window" id="chatWindow" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
+        <div class="chat-header">
+            <div class="chat-avatar"></div>
+            <div class="chat-header-info">
+                <h4 id="chatTitle">Mokopane Helper</h4>
+                <span>Online · replies instantly</span>
+            </div>
+            <button class="chat-close" id="chatClose" aria-label="Close chat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-quick" id="chatQuick">
+            <button class="quick-chip" data-q="What are your opening hours?">Opening hours</button>
+            <button class="quick-chip" data-q="Where are you located?">Location</button>
+            <button class="quick-chip" data-q="Do you take custom cake orders?">Custom orders</button>
+            <button class="quick-chip" data-q="What breads do you bake?">Our breads</button>
+            <button class="quick-chip" data-q="Tell me about your deli">Deli info</button>
+        </div>
+        <form class="chat-input-row" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask about bread, hours, orders…" autocomplete="off" aria-label="Type your message">
+            <button type="submit" class="chat-send" aria-label="Send message">➤</button>
+        </form>
+    </div>
+
+    <!-- ========== MODAL ========== -->
+    <div class="modal-overlay" id="videoModal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="closeModalBtn" aria-label="Close modal">×</button>
+            <h2 id="modalTitle"> Our Bakery Story</h2>
+            <img class="modal-img" src="C:\Users\thape\OneDrive\Desktop\Final POE WEDE Part 3 Thapelo Daniel Manyama ST10270404\Picture of The website\Fresh Bread.jpg" alt="Fresh bread from Mokopane Bakery">
+            <p>From a small home oven to a bustling artisan bakery, our journey has always been about one thing: honest bread made with time and care. Watch how we mix, fold, and bake every loaf — and meet the people behind the counter.</p>
+            <p style="font-size:0.95rem; color:#7a5233;"><em>“Every loaf tells a story, every flavour creates a memory.”</em></p>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="modalPlayBtn">▶ Play full video</button>
+                <button class="btn btn-secondary" id="modalCloseBtn2">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== Part where i implemented JAVASCRIPT ========== -->
+    <script>
+        (function() {
+            // --- Scroll Reveal Animation ---
+            const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+
+            function checkReveal() {
+                const windowHeight = window.innerHeight;
+                const revealPoint = 120;
+
+                reveals.forEach(el => {
+                    const revealTop = el.getBoundingClientRect().top;
+                    if (revealTop < windowHeight - revealPoint) {
+                        el.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('load', checkReveal);
+            window.addEventListener('scroll', checkReveal);
+            window.addEventListener('resize', checkReveal);
+            setTimeout(checkReveal, 200);
+
+            // --- Back to Top Button ---
+            const toTopBtn = document.getElementById('toTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    toTopBtn.classList.add('show');
+                } else {
+                    toTopBtn.classList.remove('show');
+                }
+            });
+
+            toTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- Video Playback Enhancement ---
+            const video = document.querySelector('video');
+            if (video) {
+                video.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+                video.play().catch(e => {
+                    console.log("Autoplay prevented. User can click the video.");
+                });
+            }
+
+            // --- Smooth Internal Anchor Scrolling ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // ============================================================
+            // STAT COUNTER ANIMATION (NEW)
+            // ============================================================
+            const statNumbers = document.querySelectorAll('.stat-number');
+
+            function animateCount(el) {
+                const target = parseInt(el.getAttribute('data-count'), 10);
+                if (isNaN(target)) return;
+                const duration = 1400;
+                const startTime = performance.now();
+                const isYear = target > 1000;
+
+                function step(now) {
+                    const progress = Math.min((now - startTime) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const value = Math.round(target * eased);
+                    el.textContent = isYear ? value : value + '+';
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        el.textContent = isYear ? target : target + '+';
+                    }
+                }
+                requestAnimationFrame(step);
+            }
+
+            const statObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCount(entry.target);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(n => statObserver.observe(n));
+
+            // ============================================================
+            // ACCORDION
+            // ============================================================
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                header.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    accordionItems.forEach(i => {
+                        i.classList.remove('open');
+                        i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                    });
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // ============================================================
+            // TABS
+            // ============================================================
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-tab');
+
+                    tabButtons.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    tabPanels.forEach(p => p.classList.remove('active'));
+
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // ============================================================
+            // MODAL
+            // ============================================================
+            const modalOverlay = document.getElementById('videoModal');
+            const openModalBtn = document.getElementById('openModalBtn');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const modalCloseBtn2 = document.getElementById('modalCloseBtn2');
+            const modalPlayBtn = document.getElementById('modalPlayBtn');
+
+            function openModal() {
+                modalOverlay.classList.add('open');
+                modalOverlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                closeModalBtn.focus();
+            }
+
+            function closeModal() {
+                modalOverlay.classList.remove('open');
+                modalOverlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                if (openModalBtn) openModalBtn.focus();
+            }
+
+            if (openModalBtn) {
+                openModalBtn.addEventListener('click', openModal);
+                openModalBtn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openModal();
+                    }
+                });
+            }
+
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (modalCloseBtn2) modalCloseBtn2.addEventListener('click', closeModal);
+
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) closeModal();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+                    closeModal();
+                }
+            });
+
+            if (modalPlayBtn) {
+                modalPlayBtn.addEventListener('click', () => {
+                    closeModal();
+                    const videoSection = document.querySelector('.video-section');
+                    if (videoSection) {
+                        videoSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        if (video) {
+                            video.play().catch(() => {});
+                        }
+                    }
+                });
+            }
+
+            // ============================================================
+            // This is where i added a chatbot for someone who lives far  and want to get a taste of our Deli (NEW)
+            // ============================================================
+            const chatLauncher = document.getElementById('chatLauncher');
+            const chatWindow = document.getElementById('chatWindow');
+            const chatClose = document.getElementById('chatClose');
+            const chatMessages = document.getElementById('chatMessages');
+            const chatForm = document.getElementById('chatForm');
+            const chatInput = document.getElementById('chatInput');
+            const chatQuick = document.getElementById('chatQuick');
+
+            // Knowledge base
+            const knowledge = [
+                {
+                    keywords: ['hour', 'open', 'close', 'time', 'trading'],
+                    reply: "We're open Mon–Fri from 6:30 to 17:00, and Saturday 7:00–14:00. We're closed on Sundays. Fresh bread comes out around 7am and again at midday!"
+                },
+                {
+                    keywords: ['where', 'location', 'address', 'find', 'directions', 'situated'],
+                    reply: "You'll find us at 12 Kerk Street, Mokopane, Limpopo — right in the heart of town, with parking out front. We're a two-minute walk from the main square. 📍"
+                },
+                {
+                    keywords: ['custom', 'cake', 'order', 'birthday', 'wedding', 'event'],
+                    reply: "Yes! We take custom cake and pastry orders — birthdays, weddings, corporate events and more. Please give us 48 hours' notice. Call +27 15 491 2345 or pop in to chat with our team. 🎂"
+                },
+                {
+                    keywords: ['bread', 'sourdough', 'loaf', 'rye', 'baguette', 'bake'],
+                    reply: "Our daily breads include 36-hour country sourdough, seeded rye, olive & rosemary fougasse, and classic baguette tradition. We also do seasonal specials — ask in-store! 🥖"
+                },
+                {
+                    keywords: ['deli', 'cheese', 'meat', 'charcuterie', 'sandwich', 'board'],
+                    reply: "Our deli counter is stocked with local artisan cheeses, cured meats (prosciutto, coppa, bresaola), house-made preserves, and gourmet made-to-order sandwiches. Build your own cheese board or let us guide you! 🧀"
+                },
+                {
+                    keywords: ['coffee', 'espresso', 'drink', 'tea', 'cappuccino'],
+                    reply: "We serve direct-trade coffee, roasted locally and brewed with care — espresso, flat white, cappuccino, filter and seasonal specials. Pair it with a warm croissant. ☕"
+                },
+                {
+                    keywords: ['pastry', 'croissant', 'dan', 'sweet', 'chocolate', 'pain'],
+                    reply: "Our pastry case is filled with hand-laminated butter croissants, pain au chocolat, almond danishes and seasonal fruit galettes — baked fresh through the morning. 🥐"
+                },
+                {
+                    keywords: ['vegan', 'gluten', 'allerg', 'diet', 'free'],
+                    reply: "We offer a small selection of vegan and gluten-friendly options, though our kitchen does handle wheat, dairy, eggs and nuts. Please ask our team about specific items — we're always happy to help! 🌾"
+                },
+                {
+                    keywords: ['delivery', 'online', 'ship', 'courier', 'order online'],
+                    reply: "At the moment we're a walk-in bakery — no online delivery just yet. For large orders or catering, please call us on +27 15 491 2345 and we'll arrange collection. 🚶"
+                },
+                {
+                    keywords: ['price', 'cost', 'how much', 'expensive'],
+                    reply: "Our sourdough loaves are around R55–R75, pastries from R28, and deli boards from R120. Custom cakes are quoted per design — just ask! 💛"
+                },
+                {
+                    keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon'],
+                    reply: "Hello and welcome to Mokopane Artisan Bakery & Deli! 🥖 How can I help — bread, pastries, deli, hours, or custom orders?"
+                },
+                {
+                    keywords: ['thank', 'thanks', 'cheers'],
+                    reply: "You're very welcome! Pop in soon — there's always something warm from the oven. 🥰"
+                }
+            ];
+
+            const fallbackReplies = [
+                "Great question! For the freshest answer, give us a ring on +27 15 491 2345 or pop into the bakery at 12 Kerk Street. 🥖",
+                "I'm not 100% sure on that one — but our team would love to help. Call +27 15 491 2345 or ask in-store!",
+                "That's a lovely question! Try asking about our breads, pastries, deli, hours or custom orders — or call us on +27 15 491 2345."
+            ];
+
+            let greeted = false;
+
+            function addMessage(text, sender) {
+                const div = document.createElement('div');
+                div.className = 'msg ' + sender;
+                div.textContent = text;
+                chatMessages.appendChild(div);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                return div;
+            }
+
+            function showTyping() {
+                const div = document.createElement('div');
+                div.className = 'msg bot typing';
+                div.innerHTML = '<span></span><span></span><span></span>';
+                chatMessages.appendChild(div);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                return div;
+            }
+
+            function getReply(userText) {
+                const lower = userText.toLowerCase();
+                for (const entry of knowledge) {
+                    if (entry.keywords.some(k => lower.includes(k))) {
+                        return entry.reply;
+                    }
+                }
+                return fallbackReplies[Math.floor(Math.random() * fallbackReplies.length)];
+            }
+
+            function sendUserMessage(text) {
+                const trimmed = text.trim();
+                if (!trimmed) return;
+
+                addMessage(trimmed, 'user');
+                chatInput.value = '';
+
+                const typingEl = showTyping();
+
+                setTimeout(() => {
+                    typingEl.remove();
+                    const reply = getReply(trimmed);
+                    addMessage(reply, 'bot');
+                }, 650 + Math.random() * 500);
+            }
+
+            function openChat() {
+                chatWindow.classList.add('open');
+                chatLauncher.style.display = 'none';
+
+                if (!greeted) {
+                    greeted = true;
+                    setTimeout(() => {
+                        addMessage("Hi there!  I'm the Mokopane Bakery helper. Ask me about our breads, pastries, deli, opening hours, or custom orders — I'm here to help!", 'bot');
+                    }, 250);
+                }
+                setTimeout(() => chatInput.focus(), 400);
+            }
+
+            function closeChat() {
+                chatWindow.classList.remove('open');
+                chatLauncher.style.display = 'flex';
+                chatLauncher.focus();
+            }
+
+            chatLauncher.addEventListener('click', openChat);
+            chatClose.addEventListener('click', closeChat);
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                sendUserMessage(chatInput.value);
+            });
+
+            chatQuick.addEventListener('click', (e) => {
+                const chip = e.target.closest('.quick-chip');
+                if (chip) {
+                    sendUserMessage(chip.getAttribute('data-q'));
+                }
+            });
+
+            // Escape to close chat
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && chatWindow.classList.contains('open')) {
+                    closeChat();
+                }
+            });
+
+            // --- Console Greeting ---
+            console.log('%c Mokopane Artisan Bakery — fresh from the oven!', 'font-size:16px; font-weight:bold; color:#7a5233; background:#f5ede4; padding:8px 16px; border-radius:30px;');
+        })();
+    </script>
+</body>
+</html>
